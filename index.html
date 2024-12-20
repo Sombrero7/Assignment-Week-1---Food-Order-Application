@@ -1,11 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Order Application</title>
+    <title>Weston's on 21st</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/burger-icon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for hover effect */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .navbar-brand img {
+            height: 20px;
+            /* Smaller height */
+            width: auto;
+            /* Maintain aspect ratio */
+            margin-right: 10px;
+            /* Add spacing between the icon and text */
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Food Order Application</h1>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="assets/burger-icon.png" alt="Burger Icon"> Weston's on 21st
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-5" style="background: linear-gradient(to right, #f97316, #f0ad4e); color: #fff;">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Welcome to Weston's on 21st</h1>
+            <p class="lead mb-4">Delicious meals delivered to your doorstep!</p>
+            <a href="#menu" class="btn btn-primary btn-lg">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Menu</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="assets/burger.jpeg" class="card-img-top" alt="Cheese Burger">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheese Burger</h5>
+                            <p class="card-text">$10.00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="assets/pizza.jpeg" class="card-img-top" alt="Pepperoni Pizza">
+                        <div class="card-body">
+                            <h5 class="card-title">Pepperoni Pizza</h5>
+                            <p class="card-text">$15.00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="assets/pasta.jpeg" class="card-img-top" alt="Creamy Pasta">
+                        <div class="card-body">
+                            <h5 class="card-title">Creamy Pasta</h5>
+                            <p class="card-text">$12.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Order Now</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3"
+                                placeholder="Enter your delivery address"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="foodItem" class="form-label">Select Food Item</label>
+                            <select class="form-select" id="foodItem">
+                                <option selected>Cheese Burger</option>
+                                <option>Pepperoni Pizza</option>
+                                <option>Creamy Pasta</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Summary Section -->
+    <section id="order-summary" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Order Summary</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Food Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Cheese Burger</td>
+                            <td>2</td>
+                            <td>$10.00</td>
+                            <td>$20.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-3" style="background:#343a40;">
+        <div class="container">
+            <p class="mb-0">© 2024 Weston's on 21st. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
